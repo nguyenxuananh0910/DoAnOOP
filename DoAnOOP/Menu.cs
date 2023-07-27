@@ -26,9 +26,11 @@ namespace DoAnOOP
                 switch (option)
                 {
                     case 1:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 2:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 3:
@@ -36,18 +38,23 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 4:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 5:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 6:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 7:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 8:
+                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Console.WriteLine("---------------------------------");
                         break;
                     case 9:
