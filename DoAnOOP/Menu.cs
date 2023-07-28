@@ -52,10 +52,48 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 7:
-                        ThanhToanHoaDon();
+                        Invoice invoice = new Invoice();
+
+                        // Hiển thị hóa đơn
+                        invoice.DisplayInvoice();
+
+
+                        // Tạo phương thức thanh toán
+                        PaymentMethod paymentMethod = new PaymentMethod();
+
+                        // Xác nhận phương thức thanh toán
+                        PaymentSystem paymentSystem = new PaymentSystem();
+                        if (!paymentSystem.ValidatePaymentMethod(paymentMethod))
+                        {
+                            Console.WriteLine("Phương thức thanh toán không hợp lệ.");
+                            return;
+                        }
+
+                        // Người dùng nhập "1" để thanh toán
+                        Console.WriteLine("Nhập '1' để thanh toán hoặc '2' để hủy:");
+                        string confirmPaymentInput = Console.ReadLine();
+
+                        if (confirmPaymentInput == "1")
+                        {
+                            Transaction transaction = new Transaction();
+                            if (paymentSystem.ProcessPayment(transaction))
+                            {
+                                transaction.DisplayTransactionConfirmation();
+                                Console.WriteLine("Thanh toán thành công.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Giao dịch thanh toán thất bại.");
+                            }
+                        }
+                        else if (confirmPaymentInput == "2")
+                        {
+                            Console.WriteLine("Hủy thanh toán.");
+                        }
                         break;
                     case 8:
-                        CapNhatThongTin();
+                        Employee employee = new Employee();
+                        employee.UpdateInfo();
                         break;
                     case 9:
                         sanPham.TimKiemXe();
@@ -72,58 +110,7 @@ namespace DoAnOOP
             } while (option != 10);
         }
 
-        static void CapNhatThongTin()
-        {
-            Employee employee = new Employee();
-
-            employee.UpdateInfo();
-
-
-        }
-        static void ThanhToanHoaDon()
-        {
-
-            Invoice invoice = new Invoice();
-
-            // Hiển thị hóa đơn
-            invoice.DisplayInvoice();
-
-
-            // Tạo phương thức thanh toán
-            PaymentMethod paymentMethod = new PaymentMethod();
-
-            // Xác nhận phương thức thanh toán
-            PaymentSystem paymentSystem = new PaymentSystem();
-            if (!paymentSystem.ValidatePaymentMethod(paymentMethod))
-            {
-                Console.WriteLine("Phương thức thanh toán không hợp lệ.");
-                return;
-            }
-
-            // Người dùng nhập "1" để thanh toán
-            Console.WriteLine("Nhập '1' để thanh toán hoặc '2' để hủy:");
-            string confirmPaymentInput = Console.ReadLine();
-
-            if (confirmPaymentInput == "1")
-            {
-                Transaction transaction = new Transaction();
-                if (paymentSystem.ProcessPayment(transaction))
-                {
-                    transaction.DisplayTransactionConfirmation();
-                    Console.WriteLine("Thanh toán thành công.");
-                }
-                else
-                {
-                    Console.WriteLine("Giao dịch thanh toán thất bại.");
-                }
-            }
-            else if (confirmPaymentInput == "2")
-            {
-                Console.WriteLine("Hủy thanh toán.");
-            }
-
-
-        }
-
     }
+
+}
 }
