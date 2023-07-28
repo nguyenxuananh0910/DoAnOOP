@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj": {}
+    "/Users/huytran/Desktop/syhuyOOP/DoAnOOP/DoAnOOP.csproj": {}
   },
   "projects": {
-    "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj": {
+    "/Users/huytran/Desktop/syhuyOOP/DoAnOOP/DoAnOOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj",
+        "projectUniqueName": "/Users/huytran/Desktop/syhuyOOP/DoAnOOP/DoAnOOP.csproj",
         "projectName": "DoAnOOP",
-        "projectPath": "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\service\\DoAnoop\\DoAnOOP\\obj\\",
+        "projectPath": "/Users/huytran/Desktop/syhuyOOP/DoAnOOP/DoAnOOP.csproj",
+        "packagesPath": "/Users/huytran/.nuget/packages/",
+        "outputPath": "/Users/huytran/Desktop/syhuyOOP/DoAnOOP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/huytran/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
         }
       }
     }

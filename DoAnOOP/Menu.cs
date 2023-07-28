@@ -96,10 +96,16 @@ namespace DoAnOOP
                         employee.UpdateInfo();
                         break;
                     case 9:
-                        sanPham.TimKiemXe();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 10:
+                        Console.WriteLine("---------------------------------");
+                        break;
+                    case 11:
+                        sanPham.TimKiemXe();
+                        Console.WriteLine("---------------------------------");
+                        break;
+                    case 12:
                         Console.WriteLine("Chương trình kết thúc.");
                         Console.WriteLine("---------------------------------");
                         break;
@@ -112,5 +118,4 @@ namespace DoAnOOP
 
     }
 
-}
 }
