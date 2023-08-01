@@ -5,7 +5,7 @@ namespace DoAnOOP
         public void HienThiMenu() {
             int option;
             SanPham sanPham = new SanPham();
-
+            HoaDon hoadon = new HoaDon();
             do
             {
                 Console.WriteLine("MENU:");
@@ -54,7 +54,8 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 8:
-                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
+                        // Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
+                        hoadon.HoaDonTheoID();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 9:
