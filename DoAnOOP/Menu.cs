@@ -55,7 +55,7 @@ namespace DoAnOOP
                         break;
                     case 8:
                         // Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
-                        hoadon.HoaDonTheoID();
+                        hoadon.XuatHoaDon();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 9:

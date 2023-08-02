@@ -2,16 +2,22 @@ using IronPdf;
 using System;
 class HoaDon
 {
-    // string MaHoaDon = null!;
-    // DateTime ThoiGianMua;
-    // DateTime ThoiGianXuatHoaDon;
+    string MaHoaDon = null!;
+    string ThoiGianMua = null!;
+    DateTime ThoiGianXuatHoaDon = DateTime.Now;
     // string DanhSachSanPhamDaMua = null!;
     // int TongGia;
     // string NhanVienHoTro = null!;
     // string PhuongThucThanhToan = null!;
-    int idHoaDon;
     string fullName = null!;
     string phoneNumber = null!;
+
+    #region FakeData
+    private List<string> fakeFullName = new List<string>() { "Phan Le Tuan", "Nguyen Xuan Anh", "Bui Xuan Phuoc", "Tran Sy Huy" };
+    private List<string> fakePhoneNumber = new List<string>() { "0123456789", "9876543210", "135791113", "024681012" };
+    private Dictionary<string, string> fakeIdList = new Dictionary<string, string>() { { "0112233445", "July 1st, 2023" }, { "1234456789", "June 23th, 2023" }, { "2244668810", "April 4th, 202" }, { "1133557799", "January 18th, 2023" } };
+    #endregion
+
     public void NhapThongTinKhachHang()
     {
         Console.Write("Nhập họ tên khách hàng : ");
@@ -19,20 +25,21 @@ class HoaDon
         Console.Write("Nhập số điện thoại khách hàng : ");
         phoneNumber = Console.ReadLine()!;
     }
-    public void NhapIdHoaDon() {
+    public void NhapMaHoaDon()
+    {
         Console.Write("Nhập mã hoá đơn : ");
-        idHoaDon = int.Parse(Console.ReadLine()!);
+        MaHoaDon = Console.ReadLine()!;
     }
-    public int NhapDeXacNhan() {
+    public int NhapDeXacNhan()
+    {
         Console.Write("Nhập 1 để xác nhận / 2 đế huỷ : ");
         int xacNhan = int.Parse(Console.ReadLine()!);
         return xacNhan;
     }
-    public bool HoaDonKhachHang() {
+    public bool HoaDonKhachHang()
+    {
         bool result = false;
         NhapThongTinKhachHang();
-        List<string> fakeFullName = new List<string>() { "Phan Le Tuan", "Nguyen Xuan Anh", "Bui Xuan Phuoc", "Tran Sy Huy"};
-        List<string> fakePhoneNumber = new List<string>() { "0123456789", "9876543210", "135791113", "024681012"};
         if (fakeFullName.Contains(fullName) && fakePhoneNumber.Contains(phoneNumber))
         {
             result = true;
@@ -40,31 +47,76 @@ class HoaDon
             Console.WriteLine($"Họ Tên Khách Hàng : {fullName}");
             Console.WriteLine($"Số điện thoại Khách Hàng : {phoneNumber}");
             Console.WriteLine($"Địa chỉ Khách Hàng : Đại học Văn Lang");
+            Console.WriteLine("-----------|---------");
+            Console.WriteLine("Ma Hoa Don | Ngay Mua");
+            Console.WriteLine("-----------|---------");
+            foreach (var item in fakeIdList)
+            {
+                Console.WriteLine($"{item.Key} | {item.Value}");
+            }
+            Console.WriteLine("-----------|---------");
+        }
+        else
+        {
+            Console.WriteLine("Thông tin khách hàng không tồn tại");
+            result = false;
         }
         return result;
     }
-    public void HoaDonTheoID() {
-        if(HoaDonKhachHang()){
-            NhapIdHoaDon();
+    public bool HoaDonTheoID()
+    {
+        bool result = false;
+        if (HoaDonKhachHang())
+        {
+            NhapMaHoaDon();
+            if (fakeIdList.ContainsKey(MaHoaDon))
+            {
+                Console.WriteLine("---------------------");
+                Console.WriteLine("Ma Hoa Don | Ngay Mua");
+                Console.WriteLine("---------------------");
+                foreach (var item in fakeIdList)
+                {
+                    if (item.Key == MaHoaDon)
+                    {
+                        result = true;
+                        ThoiGianMua = item.Value;
+                        Console.WriteLine($"{item.Key} | {item.Value}");
+                    }
+                }
+                Console.WriteLine("---------------------");
+            }
+            else
+            {
+                Console.WriteLine("Thông tin ID Hoá đơn không tồn tại");
+                result = false;
+            }
         }
+        return result;
     }
-    public void XuatHoaDon(){
-        if(NhapDeXacNhan() == 1){
-            var renderer = new ChromePdfRenderer();
-            var pdf = renderer.RenderHtmlAsPdf("Hello");
-            try
+    public void XuatHoaDon()
+    {
+        if (HoaDonTheoID())
+        {
+            Console.WriteLine("Bạn có muốn xuất hoá đơn không ?");
+            if (NhapDeXacNhan() == 1)
             {
-                pdf.SaveAs("./HoaDon.pdf");
-                Console.WriteLine("Xuất PDF Thành công");
+                var renderer = new ChromePdfRenderer();
+                var pdf = renderer.RenderHtmlAsPdf($"<h1> Hoá đơn thanh toán </h1><p>Mã Hoá Đơn : {MaHoaDon}</p><p>Họ tên Khách Hàng : {fullName}</p><p>Số điện thoại khách hàng : {phoneNumber}</p><p>Thời gian mua hàng : {ThoiGianMua}</p><p>Ngày xuất hoá đơn : {ThoiGianXuatHoaDon}</p>");
+                try
+                {
+                    pdf.SaveAs("./HoaDon.pdf");
+                    Console.WriteLine("Xuất hoá đơn thành công !");
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("Lỗi Xuất PDF");
+                    throw;
+                }
             }
-            catch (System.Exception)
+            else
             {
-                Console.WriteLine("Lỗi Xuất PDF");
-                throw;
+                Console.WriteLine("Huỷ xuất hoá đơn thành công !");
             }
-        }
-        else{
-            Console.WriteLine("Huỷ xuất hoá đơn thành công !");
         }
     }
 }
