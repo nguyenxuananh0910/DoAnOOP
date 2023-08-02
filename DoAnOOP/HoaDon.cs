@@ -32,7 +32,7 @@ class HoaDon
     }
     public int NhapDeXacNhan()
     {
-        Console.Write("Nhập 1 để xác nhận / 2 đế huỷ : ");
+        Console.Write("Nhập 1 để xác nhận / 2 để huỷ : ");
         int xacNhan = int.Parse(Console.ReadLine()!);
         return xacNhan;
     }
