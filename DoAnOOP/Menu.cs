@@ -7,6 +7,7 @@ namespace DoAnOOP
             int option;
             SanPham sanPham = new SanPham();
             HoaDon hoadon = new HoaDon();
+            KhoHang khohang = new KhoHang();
             do
             {
                 Console.WriteLine("MENU:");
@@ -72,7 +73,7 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 12:
-                        sanPham.TimKiemXe();
+                        khohang.TimKiemXe();
                         Console.WriteLine("---------------------------------");
                         break;
                     default:
