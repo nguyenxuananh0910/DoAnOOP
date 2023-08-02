@@ -40,7 +40,7 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 4:
-                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
+                        sanPham.XoaXe();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 5:
