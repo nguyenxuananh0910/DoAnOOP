@@ -8,6 +8,7 @@ namespace DoAnOOP
             SanPham sanPham = new SanPham();
             HoaDon hoadon = new HoaDon();
             KhoHang khohang = new KhoHang();
+            NhaCungCapXe nhaCungCapXe = new NhaCungCapXe();
             do
             {
                 Console.WriteLine("MENU:");
@@ -69,7 +70,7 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 10:
-                        Console.WriteLine("Chương trình kết thúc.");
+                        nhaCungCapXe.TaoDonHangMoi();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 12:
