@@ -5,71 +5,41 @@ namespace DoAnOOP
         private string idSanPham = null!;
         public void ThemXe()
         {
-            string moTaSP, tenSP, loaiSP, giaSP;
+            string MoTaSanPham, TenSanPham, LoaiSanPham, GiaSanPham;
 
             do
             {
                 Console.Write("Nhập tên sản phẩm: ");
-                tenSP = Console.ReadLine()!;
+                TenSanPham = Console.ReadLine()!;
                 Console.WriteLine("---------------------------------");
-                if (string.IsNullOrWhiteSpace(tenSP))
+                if (string.IsNullOrWhiteSpace(TenSanPham))
                     Console.WriteLine("Vui lòng không để trống!");
-            } while (string.IsNullOrWhiteSpace(tenSP));
+            } while (string.IsNullOrWhiteSpace(TenSanPham));
 
             do
             {
                 Console.Write("Nhập giá sản phẩm: ");
-                giaSP = Console.ReadLine()!;
+                GiaSanPham = Console.ReadLine()!;
                 Console.WriteLine("---------------------------------");
-                if (string.IsNullOrWhiteSpace(giaSP))
+                if (string.IsNullOrWhiteSpace(GiaSanPham))
                     Console.WriteLine("Vui lòng không để trống!");
-            } while (string.IsNullOrWhiteSpace(giaSP));
+            } while (string.IsNullOrWhiteSpace(GiaSanPham));
 
 
             do
             {
                 Console.Write("Nhập loại sản phẩm: ");
-                loaiSP = Console.ReadLine()!;
+                LoaiSanPham = Console.ReadLine()!;
                 Console.WriteLine("---------------------------------");
-                if (string.IsNullOrWhiteSpace(loaiSP))
+                if (string.IsNullOrWhiteSpace(LoaiSanPham))
                     Console.WriteLine("Vui lòng không để trống!");
-            } while (string.IsNullOrWhiteSpace(loaiSP));
+            } while (string.IsNullOrWhiteSpace(LoaiSanPham));
 
             Console.WriteLine("Nhập mô tả chi tiết:");
-            moTaSP = Console.ReadLine()!;
+            MoTaSanPham = Console.ReadLine()!;
             Console.WriteLine("---------------------------------");
             Console.WriteLine("Mã sản phẩm là: 898 ");
             Console.WriteLine("Thêm xe thành công!");
-        }
-
-        public void TimKiemXe()
-        {
-            int maSP = 898;
-            int userInput;
-
-            do
-            {
-                Console.Write("Nhập mã sản phẩm cần tìm : ");
-                if (!int.TryParse(Console.ReadLine(), out userInput))
-                {
-                    Console.WriteLine("Dữ liệu không được để trống. Vui lòng nhập lại!");
-                    Console.WriteLine("---------------------------------");
-                }
-                else if (userInput == maSP)
-                {
-                    Console.WriteLine("Đã tìm thấy sản phẩm có mã " + maSP);
-                    Console.WriteLine("Tên: Toyota");
-                    Console.WriteLine("Giá: 300.000.000 VND");
-                    Console.WriteLine("Loại: Cũ");
-                    Console.WriteLine("Mô tả chi tiết : Dung tích nhỏ, màu đen, xe hơi trầy xước, động cơ tốt, máy lạnh, màn hinh tivi");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Dữ liệu không tìm thấy!");
-                    Console.WriteLine("---------------------------------");
-                }
-            } while (userInput != 898);
         }
 
         public void XoaXe() {
