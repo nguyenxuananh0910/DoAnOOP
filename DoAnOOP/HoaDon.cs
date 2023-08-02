@@ -118,7 +118,7 @@ class HoaDon
         }
     }
 
-    public void HienHoaDon()
+    public void XacNhanThongTin()
     {
         Console.WriteLine("Hóa đơn chi tiết:");
         Console.WriteLine("Ma Hóa đơn: 12345");

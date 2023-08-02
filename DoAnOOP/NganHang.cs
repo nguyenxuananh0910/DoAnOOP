@@ -11,7 +11,7 @@
         HoaDon HoaDon = new HoaDon();
 
         // hiển thị hóa đơn
-        HoaDon.HienHoaDon();
+        HoaDon.XacNhanThongTin();
 
 
         Console.Write("TenNganHang : ");
