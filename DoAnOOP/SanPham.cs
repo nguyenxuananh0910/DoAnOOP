@@ -2,6 +2,7 @@ namespace DoAnOOP
 {
     internal class SanPham
     {
+        private string idSanPham = null!;
         public void ThemXe()
         {
             string moTaSP, tenSP, loaiSP, giaSP;
@@ -69,6 +70,32 @@ namespace DoAnOOP
                     Console.WriteLine("---------------------------------");
                 }
             } while (userInput != 898);
+        }
+
+        public void XoaXe() {
+            NhapIdSanPham();
+            if(idSanPham == "911"){
+                if(XacNhanXoaXe() == 1){
+                    Console.WriteLine("Xoá xe thành công !");
+                }
+                else{
+                    Console.WriteLine("Huỷ xoá xe thành công!");
+                }
+            }
+            else{
+                Console.WriteLine("Không tìm thấy mã sản phảm!");
+            }
+        }
+        public void NhapIdSanPham() {
+            Console.Write("Nhập ID sản phẩm : ");
+            idSanPham = Console.ReadLine()!;
+        }
+
+        public int XacNhanXoaXe() {
+            Console.WriteLine($"Bạn có muốn xoá xe có mã id là {idSanPham} không ?");
+            Console.Write("Nhập 1 để xác nhận / 2 để huỷ : ");
+            int xacNhan = int.Parse(Console.ReadLine()!);
+            return xacNhan;
         }
     }
 }

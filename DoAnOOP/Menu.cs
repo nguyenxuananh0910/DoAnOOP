@@ -6,7 +6,7 @@ namespace DoAnOOP
         {
             int option;
             SanPham sanPham = new SanPham();
-
+            HoaDon hoadon = new HoaDon();
             do
             {
                 Console.WriteLine("MENU:");
@@ -18,10 +18,11 @@ namespace DoAnOOP
                 Console.WriteLine("6. Xem sản phẩm bán được");
                 Console.WriteLine("7. Thanh Toan");
                 Console.WriteLine("8. Chỉnh sửa thông tin cá nhân");
-                Console.WriteLine("9. Đặt Xe");
-                Console.WriteLine("10. Tạo hoá đơn");
-                Console.WriteLine("11. Tìm kiếm xe");
-                Console.WriteLine("12. Thoát");
+                Console.WriteLine("9. Xuất Hóa Đơn");
+                Console.WriteLine("10. Đặt Xe");
+                Console.WriteLine("11. Tạo hoá đơn");
+                Console.WriteLine("12. Tìm kiếm xe");
+                Console.WriteLine("13. Thoát");
                 Console.Write("Chọn chức năng: ");
                 option = int.Parse(Console.ReadLine()!);
                 Console.WriteLine("---------------------------------");
@@ -40,7 +41,7 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 4:
-                        Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
+                        sanPham.XoaXe();
                         Console.WriteLine("---------------------------------");
                         break;
                     case 5:
@@ -52,55 +53,26 @@ namespace DoAnOOP
                         Console.WriteLine("---------------------------------");
                         break;
                     case 7:
-                        Invoice invoice = new Invoice();
-
-                        // Hiển thị hóa đơn
-                        invoice.DisplayInvoice();
-
-
-                        // Tạo phương thức thanh toán
-                        PaymentMethod paymentMethod = new PaymentMethod();
-
-                        // Xác nhận phương thức thanh toán
-                        PaymentSystem paymentSystem = new PaymentSystem();
-                        if (!paymentSystem.ValidatePaymentMethod(paymentMethod))
-                        {
-                            Console.WriteLine("Phương thức thanh toán không hợp lệ.");
-                            return;
-                        }
-
-                        // Người dùng nhập "1" để thanh toán
-                        Console.WriteLine("Nhập '1' để thanh toán hoặc '2' để hủy:");
-                        string confirmPaymentInput = Console.ReadLine();
-
-                        if (confirmPaymentInput == "1")
-                        {
-                            Transaction transaction = new Transaction();
-                            if (paymentSystem.ProcessPayment(transaction))
-                            {
-                                transaction.DisplayTransactionConfirmation();
-                                Console.WriteLine("Thanh toán thành công.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Giao dịch thanh toán thất bại.");
-                            }
-                        }
-                        else if (confirmPaymentInput == "2")
-                        {
-                            Console.WriteLine("Hủy thanh toán.");
-                        }
+                        NganHang nganhang = new NganHang();
+                        nganhang.ThanhToanHoaDon();
                         break;
                     case 8:
+                        // Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
                         Employee employee = new Employee();
-                        employee.UpdateInfo();
+                        employee.CapNhatThongTin();
+                        Console.WriteLine("---------------------------------");
                         break;
                     case 9:
-                        sanPham.TimKiemXe();
+                        hoadon.XuatHoaDon();
+
                         Console.WriteLine("---------------------------------");
                         break;
                     case 10:
                         Console.WriteLine("Chương trình kết thúc.");
+                        Console.WriteLine("---------------------------------");
+                        break;
+                    case 12:
+                        sanPham.TimKiemXe();
                         Console.WriteLine("---------------------------------");
                         break;
                     default:
@@ -112,5 +84,4 @@ namespace DoAnOOP
 
     }
 
-}
 }
