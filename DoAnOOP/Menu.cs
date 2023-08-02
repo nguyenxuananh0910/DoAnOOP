@@ -6,7 +6,7 @@ namespace DoAnOOP
         {
             int option;
             SanPham sanPham = new SanPham();
-
+            HoaDon hoadon = new HoaDon();
             do
             {
                 Console.WriteLine("MENU:");
@@ -90,10 +90,11 @@ namespace DoAnOOP
                         {
                             Console.WriteLine("Hủy thanh toán.");
                         }
-                        break;
+                        break;1
                     case 8:
-                        Employee employee = new Employee();
-                        employee.UpdateInfo();
+                        // Console.WriteLine("Chức năng đang phát triển! Xin thử lại sau.");
+                        hoadon.XuatHoaDon();
+                        Console.WriteLine("---------------------------------");
                         break;
                     case 9:
                         sanPham.TimKiemXe();
