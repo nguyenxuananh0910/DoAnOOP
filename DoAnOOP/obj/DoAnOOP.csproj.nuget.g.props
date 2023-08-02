@@ -12,4 +12,8 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\ADMIN\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.0.0\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.0.0\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)ironpdf.slim\2023.8.6\build\IronPdf.Slim.props" Condition="Exists('$(NuGetPackageRoot)ironpdf.slim\2023.8.6\build\IronPdf.Slim.props')" />
+  </ImportGroup>
 </Project>

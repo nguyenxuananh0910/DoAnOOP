@@ -1,13 +1,13 @@
 ﻿class Employee
 {
-    public string HoTen { get; set; }
-    public string SĐT { get; set; }
-    public string NgaySinh { get; set; }
-    public string GioiTinh { get; set; }
-    public string ChiNhanhLamViec { get; set; }
-    public string Password { get; set; }
+    public string HoTen;
+    public string SĐT;
+    public string NgaySinh;
+    public string GioiTinh;
+    public string ChiNhanhLamViec;
+    public string Password;
 
-    public void UpdateInfo()
+    public void CapNhatThongTin()
     {
 
         Console.WriteLine("Chào mừng bạn đến với trang chỉnh sửa thông tin cá nhân");

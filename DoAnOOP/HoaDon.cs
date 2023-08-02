@@ -1,14 +1,12 @@
-using IronPdf;
-using System;
 class HoaDon
 {
     string MaHoaDon = null!;
     string ThoiGianMua = null!;
     DateTime ThoiGianXuatHoaDon = DateTime.Now;
-    // string DanhSachSanPhamDaMua = null!;
-    // int TongGia;
-    // string NhanVienHoTro = null!;
-    // string PhuongThucThanhToan = null!;
+    string DanhSachSanPhamDaMua = null!;
+    int TongGia;
+    string NhanVienHoTro = null!;
+    string PhuongThucThanhToan = null!;
     string fullName = null!;
     string phoneNumber = null!;
 
@@ -118,5 +116,22 @@ class HoaDon
                 Console.WriteLine("Huỷ xuất hoá đơn thành công !");
             }
         }
+    }
+
+    public void HienHoaDon()
+    {
+        Console.WriteLine("Hóa đơn chi tiết:");
+        Console.WriteLine("Ma Hóa đơn: 12345");
+        Console.WriteLine("Thời Gian Mua: 25/7/20023 ");
+        Console.WriteLine("Thời Gian Xuất Hóa Đơn:25/8/20023 ");
+        Console.WriteLine("Danh Sách Sản Phẩm Đã Mua:  GTR 3 ");
+        Console.WriteLine("Nhân Viên Hỗ Trợ: Xuân Anh ");
+
+        Console.WriteLine("Tổng số tiền cần thanh toán: 200.000 $ ");
+
+        // Nhập phương thức thanh toán từ người dùng
+        Console.WriteLine("Nhập phương thức thanh toán ( thẻ tín dụng, chuyển khoản ngân hàng):");
+        string paymentMethodInput = Console.ReadLine();
+        PhuongThucThanhToan = paymentMethodInput;
     }
 }
