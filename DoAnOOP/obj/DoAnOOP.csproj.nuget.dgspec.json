@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj": {}
+    "D:\\DoAnOOP\\DoAnOOP\\DoAnOOP.csproj": {}
   },
   "projects": {
-    "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj": {
+    "D:\\DoAnOOP\\DoAnOOP\\DoAnOOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj",
+        "projectUniqueName": "D:\\DoAnOOP\\DoAnOOP\\DoAnOOP.csproj",
         "projectName": "DoAnOOP",
-        "projectPath": "D:\\service\\DoAnoop\\DoAnOOP\\DoAnOOP.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\service\\DoAnoop\\DoAnOOP\\obj\\",
+        "projectPath": "D:\\DoAnOOP\\DoAnOOP\\DoAnOOP.csproj",
+        "packagesPath": "C:\\Users\\PHC\\.nuget\\packages\\",
+        "outputPath": "D:\\DoAnOOP\\DoAnOOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PHC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
         },
         "frameworks": {
           "net7.0": {
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

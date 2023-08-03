@@ -17,6 +17,11 @@
     public string NgayDatXe;
 
     public string NgayDuKienCoXe;
+    public void NhapLoaiXe()
+    {
+        Console.Write("Nhap loai xe : ");
+        int LoaiXe = int.Parse(Console.ReadLine());
+    }
 
     public void TaoDonHangMoi()
     {
@@ -27,9 +32,9 @@
 
         Console.WriteLine("Đặt Xe Thành Công");
         Console.WriteLine("-----------------");
-        Console.WriteLine("Loại Xe :", LoaiXe);
-        Console.WriteLine("Hãng Xe :", HangXe);
-        Console.WriteLine("Giá Xe :", GiaXe);
+        Console.WriteLine($"Loại Xe : {LoaiXe}");
+        Console.WriteLine($"Hãng Xe : {HangXe}");
+        Console.WriteLine($"Giá Xe : {GiaXe}");
         this.ThongTinDonDatXe();
 
     }
@@ -43,9 +48,9 @@
 
         Console.WriteLine("Thông Tin Đơn Đặt Xe");
         Console.WriteLine("-----------------");
-        Console.WriteLine("Loại Xe :", LoaiXe);
-        Console.WriteLine("Hãng Xe :", HangXe);
-        Console.WriteLine("Giá Xe :", GiaXe);
+        Console.WriteLine($"Loại Xe : {LoaiXe}");
+        Console.WriteLine($"Hãng Xe : {HangXe}");
+        Console.WriteLine($"Giá Xe : {GiaXe}");
         this.XuatDonDatXe();
     }
 
@@ -58,9 +63,9 @@
 
         Console.WriteLine("Xuất Đơn Đặt Xe");
         Console.WriteLine("-----------------");
-        Console.WriteLine("Loại Xe :", LoaiXe);
-        Console.WriteLine("Hãng Xe :", HangXe);
-        Console.WriteLine("Giá Xe :", GiaXe);
+        Console.WriteLine($"Loại Xe : {LoaiXe}");
+        Console.WriteLine($"Hãng Xe : {HangXe}");
+        Console.WriteLine($"Giá Xe : {GiaXe}");
     }
 
 }
