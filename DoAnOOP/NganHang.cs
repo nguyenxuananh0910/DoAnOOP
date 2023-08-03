@@ -30,6 +30,17 @@
             Console.WriteLine("Số hóa đơn:  12345");
             Console.WriteLine("thanh toán thành công.");
 
+            Console.WriteLine("Bạn có muốn xuất hóa đơn không ?");
+            Console.Write("Nhập 1 để xác nhận/ 2 để hủy : ");
+            int xacNhanXuatHoaDon = int.Parse(Console.ReadLine()!);
+
+            if(xacNhanXuatHoaDon == 1) {
+                HoaDon.XuatHoaDon();
+            }
+            else
+            {
+                Console.WriteLine("Hủy xuất hóa đơn thành công");
+            }
         }
         else if (confirmpaymentinput == "2")
         {
